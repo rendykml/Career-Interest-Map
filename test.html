@@ -18,8 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
     />
-    <script src="js/questions.js"></script>
-    <script src="js/test.js" defer></script>
+    <script src="questions.js"></script>
     <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -151,19 +150,19 @@
         border-color: #241912;
       }
       @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
 
-  .animate-fadeIn {
-    animation: fadeIn 0.3s ease;
-  }
+      .animate-fadeIn {
+        animation: fadeIn 0.3s ease;
+      }
     </style>
   </head>
   <body
@@ -181,7 +180,6 @@
         >
           Career Interest Map
         </div>
-      
       </div>
     </header>
     <main
@@ -245,63 +243,64 @@
         <div class="flex flex-col gap-xs">
           <div class="font-h3 text-h3 text-white">Eksplorasi Minat Karir</div>
           <p class="font-caption text-caption text-surface-variant/70">
-            © 2024 Career Interest Map. All rights reserved. Powered by Professional
-            Energy.
+            © 2024 Career Interest Map. All rights reserved. Powered by
+            Professional Energy.
           </p>
         </div>
         <div class="flex gap-md">
           <a
             class="text-surface-variant/70 font-caption hover:text-primary-container transition-colors"
             href="#"
-            ></a
-          >
+          ></a>
           <a
             class="text-surface-variant/70 font-caption hover:text-primary-container transition-colors"
             href="#"
-            ></a
-          >
+          ></a>
           <a
             class="text-surface-variant/70 font-caption hover:text-primary-container transition-colors"
             href="#"
-            ></a
-          >
+          ></a>
           <a
             class="text-surface-variant/70 font-caption hover:text-primary-container transition-colors"
             href="#"
-            ></a
-          >
+          ></a>
         </div>
       </div>
       <!-- Popup Overlay -->
-<div id="popup" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-  
-  <!-- Popup Box -->
-  <div class="bg-white rounded-2xl shadow-xl p-6 max-w-xl w-[90%] text-center relative animate-fadeIn">
-    
-    <h2 class="text-2xl font-bold mb-4 text-gray-800">
-      Petunjuk Pengisian
-    </h2>
+      <div
+        id="popup"
+        class="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+      >
+        <!-- Popup Box -->
+        <div
+          class="bg-white rounded-2xl shadow-xl p-6 max-w-xl w-[90%] text-center relative animate-fadeIn"
+        >
+          <h2 class="text-2xl font-bold mb-4 text-gray-800">
+            Petunjuk Pengisian
+          </h2>
 
-    <p class="text-gray-600 leading-relaxed mb-6 text-justify">
-Bacalah setiap pernyataan dengan teliti, lalu pilih jawaban yang paling sesuai dengan diri Anda. Tidak ada jawaban benar atau salah dalam pengerjaan ini. Jawablah dengan jujur sesuai kondisi diri Anda agar hasil eksplorasi minat yang diperoleh dapat lebih menggambarkan diri Anda.    </p>
+          <p class="text-gray-600 leading-relaxed mb-6 text-justify">
+            Bacalah setiap pernyataan dengan teliti, lalu pilih jawaban yang
+            paling sesuai dengan diri Anda. Tidak ada jawaban benar atau salah
+            dalam pengerjaan ini. Jawablah dengan jujur sesuai kondisi diri Anda
+            agar hasil eksplorasi minat yang diperoleh dapat lebih menggambarkan
+            diri Anda.
+          </p>
 
-    <button 
-      onclick="closePopup()"
-      class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-xl transition"
-    >
-      Mulai
-    </button>
-
-  </div>
-</div>
-
-
+          <button
+            onclick="closePopup()"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-xl transition"
+          >
+            Mulai
+          </button>
+        </div>
+      </div>
     </footer>
     <script>
-  function closePopup() {
-    document.getElementById("popup").style.display = "none";
-  }
-</script>
-    <script src="js/test.js"></script>
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+    </script>
+    <script src="test.js"></script>
   </body>
 </html>
