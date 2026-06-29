@@ -220,16 +220,22 @@
       <!-- Container Semua Pertanyaan -->
       <div id="question-container" class="transition-all duration-500"></div>
 
-      <!-- Navigation -->
       <div class="w-full max-w-3xl flex justify-between items-center mt-6">
-        <!-- Back -->
         <button
           id="prevBtn"
           class="flex items-center gap-xs px-lg py-md rounded-xl border border-outline text-on-surface font-label-bold hover:bg-surface-container transition-all duration-300 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
         >
-          <span class="material-symbols-outlined"> arrow_back </span>
-
+          <span class="material-symbols-outlined">arrow_back</span>
           Kembali
+        </button>
+
+        <button
+          id="nextBtn"
+          disabled
+          class="flex items-center gap-xs px-lg py-md rounded-xl border border-outline text-on-surface font-label-bold hover:bg-surface-container transition-all duration-300 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
+        >
+          Selanjutnya
+          <span class="material-symbols-outlined">arrow_forward</span>
         </button>
       </div>
     </main>
