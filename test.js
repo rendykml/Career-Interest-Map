@@ -13,6 +13,8 @@ const scores = JSON.parse(localStorage.getItem("scores")) || {
 
 const container = document.getElementById("question-container");
 
+const nextBtn = document.getElementById("nextBtn");
+
 const prevBtn = document.getElementById("prevBtn");
 
 const progressText = document.getElementById("progress-text");
@@ -132,6 +134,14 @@ function addOptionListener() {
     }
   });
 
+  const totalQuestions = sections[currentQuestion].length;
+
+  if (Object.keys(currentAnswers).length === totalQuestions) {
+    nextBtn.disabled = false;
+  } else {
+    nextBtn.disabled = true;
+  }
+
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const questionIndex = button.dataset.question;
@@ -176,38 +186,40 @@ function addOptionListener() {
       const answeredQuestions = Object.keys(currentAnswers).length;
 
       if (answeredQuestions === totalQuestions) {
-        // delay biar smooth
-        setTimeout(() => {
-          container.classList.add("opacity-70", "scale-[0.98]");
-
-          setTimeout(() => {
-            container.classList.remove("opacity-70", "scale-[0.98]");
-
-            currentQuestion++;
-
-            if (currentQuestion < sections.length) {
-              renderQuestion();
-
-              // auto scroll ke atas
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              });
-            } else {
-              showResult();
-
-              // scroll ke atas hasil
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              });
-            }
-          }, 300);
-        }, 400);
+        nextBtn.disabled = false;
       }
     });
   });
 }
+
+nextBtn.addEventListener("click", () => {
+  container.classList.add("opacity-70", "scale-[0.98]");
+
+  setTimeout(() => {
+    container.classList.remove("opacity-70", "scale-[0.98]");
+
+    currentQuestion++;
+
+    localStorage.setItem("currentQuestion", currentQuestion);
+
+    if (currentQuestion < sections.length) {
+      renderQuestion();
+
+      // Scroll ke atas
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      showResult();
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }, 300);
+});
 
 prevBtn.addEventListener("click", () => {
   if (currentQuestion > 0) {
@@ -229,12 +241,12 @@ prevBtn.addEventListener("click", () => {
 });
 
 function showResult() {
-  // simpan hasil final
   localStorage.setItem("finalScores", JSON.stringify(scores));
-
   localStorage.setItem("finalAnswers", JSON.stringify(answers));
 
-  // pindah halaman
+  // Reset agar kalau buka test lagi mulai dari awal
+  localStorage.setItem("currentQuestion", 11);
+
   window.location.href = "result.html";
 }
 
